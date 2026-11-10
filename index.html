@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+    
+
+    <style>
+
+        /* GENERAL */
+
+
+        body {
+            background-color: #fff9f7;
+            color: #402d35;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        :root {
+            --pink: #e98ba9;
+            --dark-pink: #b64f76;
+            --light-pink: #fce5ec;
+            --cream: #fff9f7;
+            --dark: #402d35;
+        }
+
+        section {
+            padding: 100px 0;
+            scroll-margin-top: 75px;
+        }
+
+        .pink-text {
+            color: var(--dark-pink);
+        }
+
+        .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-label {
+            color: var(--dark-pink);
+            letter-spacing: 4px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(35px, 5vw, 55px);
+            font-weight: 700;
+        }
+
+        /* NAVBAR */
+
+        .navbar {
+            background-color: rgba(255, 249, 247, 0.95);
+            border-bottom: 1px solid #f4d9e2;
+        }
+
+        .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-pink) !important;
+            font-size: 27px;
+            font-weight: 700;
+        }
+
+        .nav-link {
+            color: var(--dark) !important;
+            font-size: 13px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .nav-link:hover {
+            color: var(--dark-pink) !important;
+        }
+
+        .contact-nav {
+            background-color: var(--dark-pink);
+            color: white !important;
+            border-radius: 30px;
+            padding: 9px 18px !important;
+        }
+
+        /* HERO */
+
+        .hero {
+            background-color: var(--light-pink);
+            min-height: 650px;
+            padding: 90px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(55px, 8vw, 95px);
+            line-height: 1.05;
+            font-weight: 700;
+        }
+
+        .hero h1 span {
+            color: var(--dark-pink);
+            font-style: italic;
+        }
+
+       
+
+        .hero-photo {
+            width: 430px;
+            height: 500px;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: 15px 15px 0 #e9a5bb;
+        }
+
+                
+        .btn-pink {
+            background-color: var(--dark-pink);
+            color: white;
+            padding: 13px 27px;
+            border-radius: 30px;
+            border: 2px solid var(--dark-pink);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-pink:hover {
+            background-color: transparent;
+            color: var(--dark-pink);
+        }
+
+        .btn-outline-pink {
+            border: 2px solid var(--dark-pink);
+            color: var(--dark-pink);
+            border-radius: 30px;
+            padding: 12px 25px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-outline-pink:hover {
+            background-color: var(--dark-pink);
+            color: white;
+        }
+
+        /* ABOUT */
+
+        .about-photo {
+            width: 100%;
+            max-width: 400px;
+            height: 480px;
+            object-fit: cover;
+            border-radius: 15px;
+            box-shadow: 15px 15px 0 var(--light-pink);
+        }
+
+        .about-text {
+            line-height: 2;
+            color: #862c54;
+        }
+
+        /* EDUCATION */
+
+        .education-section {
+            background-color: #fcecf0;
+        }
+
+        .education-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            height: 100%;
+            border-left: 5px solid var(--pink);
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 12px 25px #e9a5bb40;
+        }
+
+        .education-year {
+            color: var(--dark-pink);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .education-icon {
+            font-size: 35px;
+            color: var(--pink);
+            margin-bottom: 20px;
+        }
+
+        
+        /* HOBBIES */
+
+        .hobby-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 35px 20px;
+            text-align: center;
+            height: 100%;
+            border: 1px solid #f4d9e2;
+            transition: 0.3s;
+        }
+
+        .hobby-card:hover {
+            background-color: var(--light-pink);
+            transform: rotate(-2deg) translateY(-5px);
+        }
+
+        .hobby-icon {
+            background-color: var(--light-pink);
+            color: var(--dark-pink);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin: auto auto 20px;
+        }
+
+        
+
+        /* SKILLS */
+
+        .skills-section {
+            background-color: #fcecf0;
+        }
+
+        .skill-box {
+            background: white;
+            padding: 30px;
+            border-radius: 18px;
+            height: 100%;
+        }
+
+        .progress {
+            height: 10px;
+            background-color: #f5dce5;
+            border-radius: 20px;
+        }
+
+        .progress-bar {
+            background-color: var(--dark-pink);
+            border-radius: 20px;
+        }
+
+        .skill-name {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* PROJECTS */
+
+        .project-card {
+            background-color: white;
+            border-radius: 20px;
+            overflow: hidden;
+            height: 100%;
+            box-shadow: 0 5px 20px #8e53600c;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px #b64f7620;
+        }
+
+        .project-cover {
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 65px;
+            color: #b64f76;
+        }
+
+        .cover-one {
+            background-color: #f8dce6;
+        }
+
+        .cover-two {
+            background-color: #f8e9dc;
+        }
+
+        .cover-three {
+            background-color: #e9e1f5;
+        }
+
+        .cover-four {
+            background-color: #e1eeee;
+        }
+
+        .project-body {
+            padding: 25px;
+        }
+
+        .project-number {
+            color: var(--dark-pink);
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+
+        .project-tag {
+            background-color: var(--light-pink);
+            color: var(--dark-pink);
+            border-radius: 20px;
+            padding: 6px 12px;
+            font-size: 11px;
+            display: inline-block;
+        }
+
+        /* EXPERIENCE */
+
+        .experience-section {
+            background-color: #fcecf0;
+        }
+
+        .experience-item {
+            background: white;
+            border-radius: 18px;
+            padding: 28px;
+            height: 100%;
+            border-bottom: 4px solid var(--pink);
+        }
+
+        .experience-item i {
+            font-size: 30px;
+            color: var(--dark-pink);
+            margin-bottom: 20px;
+        }
+
+        /* CONTACT */
+
+        .contact-section {
+            background-color: #f9e1e9;
+        }
+
+        .contact-information {
+            background-color: var(--dark-pink);
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            height: 100%;
+        }
+
+        .contact-information i {
+            font-size: 20px;
+            margin-right: 12px;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 35px;
+            border-radius: 20px;
+        }
+
+        .form-control {
+            padding: 13px;
+            border-radius: 10px;
+            border: 1px solid #f0d4de;
+        }
+
+        .form-control:focus {
+            border-color: var(--pink);
+            box-shadow: 0 0 0 0.2rem #e98ba930;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background-color: #402d35;
+            color: white;
+            padding: 35px 0;
+        }
+
+        footer .footer-name {
+            color: #f3abc2;
+            font-family: 'Playfair Display', serif;
+            font-size: 25px;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            color: #f3abc2;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                text-align: center;
+                padding: 65px 0;
+            }
+
+            .hero-description {
+                margin: auto;
+            }
+
+            .hero-photo {
+                width: 240px;
+                height: 300px;
+                margin-top: 45px;
+            }
+
+            .photo-decoration {
+                display: none;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+
+            .about-photo {
+                height: 330px;
+                margin-bottom: 35px;
+            }
+
+            .contact-form {
+                padding: 22px;
+            }
+        }
+
+
+
+        
+
+        
+
+       
+
+    </style>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+
+        <a class="navbar-brand" href="#home">My Portfolio</a>
+
+        <button class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarMenu">
+
+            <ul class="navbar-nav ms-auto align-items-center">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#home">HOME</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#about">ABOUT</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#education">EDUCATION</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#hobbies">HOBBIES</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects">PROJECTS</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#experience">EXPERIENCE</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link contact-nav" href="#contact">
+                        LET'S TALK
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<!-- HOME/hero -->
+
+<section class="hero" id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <div class="col-7">
+
+              
+                
+                <h1 class="mt-3">
+                     Thiri
+                    <span>Aung</span>
+                </h1>
+
+                <h4 class="mt-4">
+                    HND Computing & <span class="pink-text fst-italic">Chemistry Major</span> Student
+                </h4>
+
+                <p class="hero-description mt-3">
+                    In this web-page, you can see about my Portfolio.
+                    Welcome to my little corner of the digital world!
+                </p>
+
+                <div class="mt-4">
+
+                    <a href="#projects" class="btn-pink">
+                        Explore My Work
+                        <i class="fa-solid fa-arrow-right ms-2"></i>
+                    </a>
+
+                    <a href="#about" class="btn-outline-pink ms-2">
+                        About Me
+                    </a>
+
+                </div>
+
+               
+            </div>
+
+            <div class="col-lg-5 text-center position-relative">
+
+                <i class="fa-solid fa-sparkles photo-decoration"></i>
+
+                <img src="thiri.jpg"
+                     class="hero-photo"
+                     alt="Thiri Aung Profile Photo">
+
+                <p class="serif fst-italic mt-4 fs-5">
+                    "Dream big, work hard and stay curious."
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT ME -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+            <div class="col-lg-5 text-center">
+
+                <img src="thiri1.jpg"
+                     class="about-photo"
+                     alt="About Thiri">
+
+            </div>
+
+            <div class="col-lg-7">
+
+                <p class="section-label">01 / GET TO KNOW ME</p>
+
+                <h2 class="section-heading mb-4">
+                    More than just
+                    <span class="pink-text fst-italic">
+                        a student.
+                    </span>
+                </h2>
+
+                <p class="about-text">
+                    My name is Thiri Aung.I am 20 years old. I am from Yangon,
+                    Myanmar, and I am currently studying
+                    HND Computing at YIC and Chemistry major at EYU.
+                </p>
+
+                <p class="about-text">
+                    I am interested in Information Technology,
+                    especially web development, project management,
+                    networking and cybersecurity.
+                </p>
+
+                <p class="about-text">
+                    I enjoy meeting new people, leading the group
+                    and searching new experience.I aslo enjoy in fashion and modelling.
+                    I believe that every experience is an
+                    opportunity to learn and improve.
+                </p>
+
+                
+                <p class="about-text">
+                    In free time,helping with my parent's business and do my small own business. My future ambition is to become a successful
+                    IT professional and continue developing
+                    my technical skills .
+                </p>
+
+                
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Education-->
+
+<section class="education-section" id="education">
+
+    <div class="container">
+
+        <div class="text-center">
+            <p class="section-label">02 / MY LEARNING JOURNEY</p>
+
+            <h2 class="section-heading">
+                Education & <span class="pink-text">Growth.</span>
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Every step of learning brings me closer to my goals.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-6">
+
+                <div class="education-card">
+                    
+                    <i class="fa-solid fa-graduation-cap education-icon"></i>
+
+                    <p class="education-year">2025 - PRESENT</p>
+
+                    <h4>Higher National Diploma</h4>
+
+                    <h6 class="pink-text">HND Computing<strong> at YIC</strong></h6>
+                    
+                    <p>"first year(second sem)student"</p>
+
+                     <p class="text-secondary mt-3">
+                        Currently studying computing and developing
+                        practical knowledge in programming,SDLC,Professional Practise,
+                        networking, databases, web development,project management,ANE,SNE,cybersecurity and English.
+                    </p>
+
+                    <hr>
+
+                    <h4>Distance Education</h4>
+
+                    <h6 class="pink-text">Chemistry Major<strong> at EYU</strong></h6>
+
+                     <p>"second year student"</p>
+
+                    <p class="text-secondary mt-3">
+                        Currently studying dealing with Chemistry subject and other minor subjects.
+                    </p>
+
+                </div>
+
+
+
+            </div>
+
+             <div class="col-6">
+
+                <div class="education-card">
+
+                    <i class="fa-solid fa-school education-icon"></i>
+
+                    <p class="education-year">PREVIOUS STUDIES</p>
+
+                    <h4>High School Education</h4>
+
+                    <h6 class="pink-text">Complete Matiplication Exam(grade-12)<strong> at B.E.H.S (4) Thanlyin </strong></h6>
+
+                    <p class="text-secondary mt-3">
+                       I am outstanding and ideal student for others.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+</section>
+
+
+<!-- HOBBIES -->
+
+<section id="hobbies">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="section-label">03 / THINGS I ENJOY</p>
+
+            <h2 class="section-heading">
+                My Little <span class="pink-text">Happiness.</span>
+            </h2>
+
+            <p class="text-secondary mt-3">
+                A few things that make my free time special.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="hobby-card">
+
+                    
+
+                    <h4>Dancing</h4>
+
+                    <p class="text-secondary mt-3">
+                        I enjoy dancing because it allows me to express
+                        myself creatively and improve my network and confidence.I actively participated in various school events, including Fresher Welcome celebrations, Thingyan festivals and football matches as a cheerleader. Moreover, I was the leader of the school's Dance Club, where I developed my leadership, teamwork and communication skills.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="hobby-card">
+
+                    
+
+                    <h4>Cooking</h4>
+
+                    <p class="text-secondary mt-3">
+                        I enjoy cooking because I love trying new recipes,
+                        exploring different flavours and preparing delicious
+                        meals. It also helps me develop creativity,peaceful mind and patience.These are the dishes that i cooked.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="hobby-card">
+
+                   
+
+                    <h4>Modelling & Catwalk training </h4>
+
+                    <p class="text-secondary mt-3">
+                         I enjoy modelling and catwalk training because
+                         they help me build confidence, improve my posture
+                         and develop my walking skills.I also the trainer of school's king & queen selection.I train the walk to them.
+                    </p>
+
+                </div>
+
+            </div>
+            
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- SKILLS -->
+
+<section class="skills-section" id="skills">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="section-label">04 / MY ABILITIES</p>
+
+            <h2 class="section-heading">
+                Skills & <span class="pink-text">Strengths.</span>
+            </h2>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="skill-box">
+
+                    <h4 class="serif mb-4">
+                        <i class="fa-solid fa-code pink-text me-2"></i>
+                        Technical Skills
+                    </h4>
+
+                    <p class="skill-name">HTML & CSS</p>
+
+                    <div class="progress mb-4">
+                        <div class="progress-bar" style="width:80%"></div>
+                    </div>
+
+                    <p class="skill-name">Bootstrap</p>
+
+                    <div class="progress mb-4">
+                        <div class="progress-bar" style="width:70%"></div>
+                    </div>
+
+                    <p class="skill-name">C++ Programming</p>
+
+                    <div class="progress mb-4">
+                        <div class="progress-bar" style="width:65%"></div>
+                    </div>
+
+                    <p class="skill-name">SQL Database</p>
+
+                    <div class="progress">
+                        <div class="progress-bar" style="width:60%"></div>
+                    </div>
+
+                    <small class="text-secondary d-block mt-3">
+                        Example levels. Please adjust to your real abilities.
+                    </small>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-6">
+
+                <div class="skill-box">
+
+                    <h4 class="serif mb-4">
+                        <i class="fa-solid fa-heart pink-text me-2"></i>
+                        Personal Strengths
+                    </h4>
+
+                    <div class="row g-3">
+
+                        <div class="col-6">
+                            <div class="fact-box">
+                                <i class="fa-solid fa-comments pink-text fa-2x mb-2"></i>
+                                <p>Communication</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="fact-box">
+                                <i class="fa-solid fa-people-group pink-text fa-2x mb-2"></i>
+                                <p>Teamwork</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="fact-box">
+                                <i class="fa-solid fa-crown pink-text fa-2x mb-2"></i>
+                                <p>Leadership</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="fact-box">
+                                <i class="fa-solid fa-clock pink-text fa-2x mb-2"></i>
+                                <p>Time Management</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="fact-box">
+                                <i class="fa-solid fa-lightbulb pink-text fa-2x mb-2"></i>
+                                <p>Creativity</p>
+                            </div>
+                        </div>
+
+                        <div class="col-6">
+                            <div class="fact-box">
+                                <i class="fa-solid fa-puzzle-piece pink-text fa-2x mb-2"></i>
+                                <p>Problem Solving</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="row align-items-end mb-5">
+
+            <div class="col-md-8">
+
+                <p class="section-label">05 / THINGS I HAVE CREATED</p>
+
+                <h2 class="section-heading">
+                    My Creative <span class="pink-text">Works.</span>
+                </h2>
+
+            </div>
+
+            <div class="col-md-4 text-md-end">
+                <p class="text-secondary">
+                    Learning by doing, creating and improving.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- PROJECT 1 -->
+
+            <div class="col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-cover cover-one">
+                        <i class="fa-solid fa-code"></i>
+                    </div>
+
+                    <div class="project-body">
+
+                        <p class="project-number">PROJECT 01</p>
+
+                        <h4 class="serif">Judo Training Management System</h4>
+
+                        <p class="text-secondary">
+                            A menu-driven C++ application designed
+                            to manage athlete information, training
+                            plans and training fees.
+                        </p>
+
+                        <span class="project-tag">C++</span>
+                        <span class="project-tag">Programming</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-cover cover-two">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+
+                    <div class="project-body">
+
+                        <p class="project-number">PROJECT 02</p>
+
+                        <h4 class="serif">TrustBank AI</h4>
+
+                        <p class="text-secondary">
+                            An academic research project exploring
+                            how Artificial Intelligence can be applied
+                            in banking and payment services.
+                        </p>
+
+                        <span class="project-tag">Artificial Intelligence</span>
+                        <span class="project-tag">Research</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-cover cover-three">
+                        <i class="fa-solid fa-network-wired"></i>
+                    </div>
+
+                    <div class="project-body">
+
+                        <p class="project-number">PROJECT 03</p>
+
+                        <h4 class="serif">Network Infrastructure Design</h4>
+
+                        <p class="text-secondary">
+                            An academic network design project
+                            involving network devices, servers,
+                            connectivity and security.
+                        </p>
+
+                        <span class="project-tag">Networking</span>
+                        <span class="project-tag">Security</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="col-md-6">
+
+                <div class="project-card">
+
+                    <div class="project-cover cover-four">
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+
+                    <div class="project-body">
+
+                        <p class="project-number">PROJECT 04</p>
+
+                        <h4 class="serif">Personal Portfolio Website</h4>
+
+                        <p class="text-secondary">
+                            A responsive personal website created
+                            to introduce myself, my education,
+                            interests and academic projects.
+                        </p>
+
+                        <span class="project-tag">HTML</span>
+                        <span class="project-tag">Bootstrap</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="experience-section" id="experience">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="section-label">06 / MY EXPERIENCE</p>
+
+            <h2 class="section-heading">
+                Growing Through <span class="pink-text">Experience.</span>
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Every project and activity teaches me something new.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-md-4">
+
+                <div class="experience-item">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    <h4>Team Collaboration</h4>
+
+                    <p class="text-secondary mt-3">
+                        Participated in academic group assignments,
+                        exchanged ideas and collaborated with
+                        classmates to complete tasks.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="experience-item">
+
+                    <i class="fa-solid fa-microphone"></i>
+
+                    <h4>Conference & Presentation</h4>
+
+                    <p class="text-secondary mt-3">
+                        Developed leadership, public speaking,
+                        presentation and event-planning skills
+                        through academic conference activities.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <div class="experience-item">
+
+                    <i class="fa-solid fa-computer"></i>
+
+                    <h4>Practical IT Learning</h4>
+
+                    <p class="text-secondary mt-3">
+                        Gained practical experience through
+                        programming, database, networking
+                        and web development coursework.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact-section" id="contact">
+
+    <div class="container">
+
+        <div class="text-center mb-5">
+
+            <p class="section-label">07 / GET IN TOUCH</p>
+
+            <h2 class="section-heading">
+                Let's Make Something <span class="pink-text">Together.</span>
+            </h2>
+
+            <p class="text-secondary mt-3">
+                Have a question or want to connect? Send me a message.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <div class="col-lg-5">
+
+                <div class="contact-information">
+
+                    <h3 class="serif mb-4">Contact Information</h3>
+
+                    <p class="mb-4">
+                        I would love to hear from you.
+                        Feel free to get in touch!
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-envelope"></i>
+                        thiriaung242006@email.com
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Yangon, Myanmar
+                    </p>
+
+                    <p>
+                        <i class="fa-solid fa-graduation-cap"></i>
+                        HND Computing Student
+                    </p>
+
+                    <div class="mt-5">
+
+                        <a href="#" class="text-white me-3 fs-4">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+
+                        <a href="#" class="text-white me-3 fs-4">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+
+                        <a href="#" class="text-white fs-4">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-7">
+
+                <div class="contact-form">
+
+                    <form>
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Your Name
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="Enter your name"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Your Email
+                            </label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   placeholder="Enter your email"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Subject
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   placeholder="What would you like to discuss?">
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+                                Your Message
+                            </label>
+
+                            <textarea class="form-control"
+                                      rows="5"
+                                      placeholder="Write your message here..."
+                                      required></textarea>
+
+                        </div>
+
+
+                        <button type="submit" class="btn-pink w-100">
+                            Send Message
+                            <i class="fa-solid fa-paper-plane ms-2"></i>
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container text-center">
+
+        <h3 class="footer-name">Thiri Aung.</h3>
+
+        <p class="mt-2">
+            Learning with passion. Growing with purpose.
+        </p>
+
+        <div class="my-4">
+
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+        </div>
+
+        <hr class="border-secondary">
+
+        <p class="small mb-0">
+            &copy; 2026 Thiri Aung. All Rights Reserved.
+        </p>
+
+    </div>
+
+</footer>
+
+
+    
+</body>
+</html>
